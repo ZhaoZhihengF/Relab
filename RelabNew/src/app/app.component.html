@@ -2,6 +2,23 @@
 <!--Centriamo la mappa alle nostre coordinate-->
 <google-map [center]="center">  
   <!--Mettiamo un marker alle nostre coordinate-->
-  <map-marker [position]="position" [label]="label" [title]="title">
-  </map-marker>
+  <map-marker [position]="position" 
+              [label]="label" 
+              [title]="title"
+              [options] = "markerOptions">
+ </map-marker>
+
+  <map-circle [center]="position"
+              [radius]="50"
+              [options] = 'circleOptions'>
+              
+  </map-circle>
+  <map-circle [center]="position"
+              [radius]="70"
+              [options] = 'circleOptions1'>
+              
+  </map-circle>
 </google-map>
+<button (click)="Red()">Red</button>
+<button (click)="Yellow()">Yellow</button>
+<button (click)="Green()">Green</button>
