@@ -13,7 +13,10 @@ export class AppComponent {
   label :string;
   circleOptions : any;
   circleOptions1 : any;
+  circleOptions2 : any;
   markerOptions: google.maps.MarkerOptions;
+  vertices: google.maps.LatLngLiteral[];
+  rettangolo: google.maps.LatLngLiteral[];
  
   constructor()
   {
@@ -22,7 +25,24 @@ export class AppComponent {
     this.label = "ciao";
     this.circleOptions = {fillColor : 'red'}
     this.circleOptions1 = {fillColor : 'Blue'}
-    let iconData : google.maps.Icon = 
+    this.circleOptions2 = {fillColor : 'Green'}
+    this.vertices = [
+      {  lat: this.center.lat + 0.001, lng: this.center.lng - 0.002 },
+      {  lat: this.center.lat, lng: this.center.lng },
+      {  lat: this.center.lat - 0.001, lng: this.center.lng - 0.002}
+          ]  ;
+          this.rettangolo = [
+            {  lat: this.center.lat + 0.001, lng: this.center.lng  },
+            {  lat: this.center.lat + 0.001, lng: this.center.lng + 0.001},
+            {  lat: this.center.lat - 0.001, lng: this.center.lng + 0.001},
+            {  lat: this.center.lat - 0.001, lng: this.center.lng }
+            
+            
+            
+                ]  ;
+
+
+        let iconData : google.maps.Icon = 
       {
       url:'./assets/img/cat_acrobat.ico',
       scaledSize : new google.maps.Size(60,60)
@@ -35,4 +55,12 @@ export class AppComponent {
   {this.circleOptions1 = {fillColor : 'Yellow'}}
   Green()
   {this.circleOptions1 = {fillColor : 'Green'}}
+  Blue()
+  {this.circleOptions2 = {fillColor : 'Blue'}}
+  Purple()
+  {this.circleOptions2 = {fillColor : 'Purple'}}
+  Grey()
+  {this.circleOptions2 = {fillColor : 'Grey'}}
+ 
+  
 }

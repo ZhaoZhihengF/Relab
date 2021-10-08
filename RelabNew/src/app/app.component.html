@@ -6,7 +6,7 @@
               [label]="label" 
               [title]="title"
               [options] = "markerOptions">
- </map-marker>
+  </map-marker>
 
   <map-circle [center]="position"
               [radius]="50"
@@ -18,7 +18,21 @@
               [options] = 'circleOptions1'>
               
   </map-circle>
+
+   
+  <map-polygon [paths]="vertices">
+  </map-polygon>
+
+  <map-polygon [paths]="rettangolo"
+               [options] = 'circleOptions2'>
+  </map-polygon>>
+   
+               
+  </map-polygon>
 </google-map>
 <button (click)="Red()">Red</button>
 <button (click)="Yellow()">Yellow</button>
 <button (click)="Green()">Green</button>
+<button (click)="Blue()">Blue</button>
+<button (click)="Purple()">Purple</button>
+<button (click)="Grey()">Grey</button>
